@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#This simple script is going to report the size of a specified directory
+#Run as root!
+
+echo "Tell me the name of a directory: "
+read dirname
+
+if ! [[ -d $dirname ]]; then
+  echo "That is not a directory."
+  exit 1
+else
+  du -sh $dirname
+  exit 0
+fi
